@@ -1,0 +1,116 @@
+
+
+/* Estilo base das galerias */
+.gallery {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    overflow: hidden;
+    position: relative;
+    height: 340px;
+    margin-top: 2rem;
+}
+
+/* Identidade visual única para cada galeria */
+.gallery-1 { border-top: 5px solid #d4af37; }
+.gallery-2 { border-top: 5px solid #2c3e50; }
+.gallery-3 { border-top: 5px solid #e74c3c; }
+.gallery-4 { border-top: 5px solid #3498db; }
+.gallery-5 { border-top: 5px solid #2ecc71; }
+.gallery-6 { border-top: 5px solid #9b59b6; }
+.gallery-7 { border-top: 5px solid #1abc9c; }
+.gallery-8 { border-top: 5px solid #f1c40f; }
+.gallery-9 { border-top: 5px solid #e67e22; }
+.gallery-10 { border-top: 5px solid #34495e; }
+.gallery-11 { border-top: 5px solid #95a5a6; }
+.gallery-12 { border-top: 5px solid #f39c12; }
+.gallery-13 { border-top: 5px solid #27ae60; }
+.gallery-14 { border-top: 5px solid #d35400; }
+.gallery-15 { border-top: 5px solid #16a085; }
+.gallery-16 { border-top: 5px solid #8e44ad; }
+.gallery-17 { border-top: 5px solid #c0392b; }
+.gallery-18 { border-top: 5px solid #2980b9; }
+.gallery-19 { border-top: 5px solid #f8c291; }
+.gallery-20 { border-top: 5px solid #6a89cc; }
+
+/* Título das galerias */
+.gallery-title {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #fff;
+    background-color: rgba(0,0,0,0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Container das imagens */
+.slides-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Slides com transição suave */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Controles das galerias */
+.gallery-controls {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.control-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.control-dot.active {
+    background-color: #fff;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 400px) {
+    body {
+        padding: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        height: 300px;
+    }
+}
+
+/* artigos da galeria */
+.gallery-articles {
+    background-color: rgb(255, 255, 255);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 2.4rem;
+    margin-bottom: 1rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}

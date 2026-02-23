@@ -1,0 +1,211 @@
+body {
+    background-color: rgb(249, 252, 255);
+    min-height: 500vh;
+    /* Para permitir rolagem */
+}
+
+/* Estilização do header e todos seus efeitos */
+/* Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Cabeçalho Principal */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 8%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Efeito ao Rolar a Página */
+.header.scrolled {
+    background: rgba(17, 24, 39, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 1rem 8%;
+}
+
+.header.scrolled .logo,
+.header.scrolled .nav-link {
+    color: #fff;
+}
+
+.header.scrolled .btn-contato {
+    background-color: royalblue;
+    color: #fff;
+}
+
+/* Logo */
+.logo {
+    font-family: 'segoe UI', Tahoma, Geneva, Verdana, sans-sarif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    border-bottom: 2px solid rgba(65, 105, 225, 0.2);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4299e1;
+    transition: width 0.4s ease;
+}
+
+.logo:hover::after {
+    width: 100%;
+}
+
+/* Navegação */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4299e1;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Botão de Contato */
+.btn-contato {
+    padding: 0.8rem 1.8rem;
+    background-color: #4299e1;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-contato:hover {
+    background-color: #2b6cb0;
+    transform: translateY(-2px);
+}
+
+/* Menu Hambúrguer (Mobile) */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid rgba(65, 105, 255, 0.1);
+    border-radius: 10px;
+}
+
+.barra {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled .barra {
+    background-color: cornflowerblue;
+}
+
+/* Seção Hero (Para Contexto Visual) */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)), url('https://i.ibb.co/4nYXzzp1/landscape-background-image.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-titulo {
+    font-size: 3rem;
+    max-width: 800px;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+    }
+
+    .nav.ativo {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link,
+    .header.scrolled .nav-link {
+        color: #2d3748;
+    }
+
+    .menu-hamburguer {
+        display: flex;
+    }
+
+    .menu-hamburguer.ativo .barra:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-hamburguer.ativo .barra:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-hamburguer.ativo .barra:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .hero-titulo {
+        font-size: 2rem;
+        padding: 0 2rem;
+    }
+}

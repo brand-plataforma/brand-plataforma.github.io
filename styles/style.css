@@ -1,0 +1,857 @@
+.container-home {
+    background-color: rgb(249, 252, 255);
+    min-height: 500vh;
+    /* Para permitir rolagem */
+}
+
+/* Estilização do header e todos seus efeitos */
+/* Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Cabeçalho Principal */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 8%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Efeito ao Rolar a Página */
+.header.scrolled {
+    background: rgba(17, 24, 39, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 1rem 8%;
+}
+
+.header.scrolled .logo,
+.header.scrolled .nav-link {
+    color: #fff;
+}
+
+.header.scrolled .btn-contato {
+    background-color: royalblue;
+    color: #fff;
+}
+
+/* Logo */
+.logo {
+    font-family: 'segoe UI', Tahoma, Geneva, Verdana, sans-sarif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    border-bottom: 2px solid rgba(65, 105, 225, 0.2);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4299e1;
+    transition: width 0.4s ease;
+}
+
+.logo:hover::after {
+    width: 100%;
+}
+
+/* Navegação */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+/* lista de secções explorar */
+.lista-explorar {
+    line-height: 2.5rem;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4299e1;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Botão de Contato */
+.btn-contato {
+    padding: 0.8rem 1.8rem;
+    background-color: #4299e1;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-contato:hover {
+    background-color: #2b6cb0;
+    transform: translateY(-2px);
+}
+
+/* Menu Hambúrguer (Mobile) */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid rgba(65, 105, 255, 0.1);
+    border-radius: 10px;
+}
+
+.barra {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled .barra {
+    background-color: cornflowerblue;
+}
+
+/* Seção Hero (Para Contexto Visual) */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('https://i.ibb.co/ynQ21Kpf/whatsapp-default-background-image.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-titulo {
+    opacity: 0.2;
+    font-size: 3rem;
+    max-width: 800px;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+    }
+
+    .nav.ativo {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link,
+    .header.scrolled .nav-link {
+        color: #2d3748;
+    }
+
+    .menu-hamburguer {
+        display: flex;
+    }
+
+    .menu-hamburguer.ativo .barra:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-hamburguer.ativo .barra:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-hamburguer.ativo .barra:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .hero-titulo {
+        font-size: 2rem;
+        padding: 0 2rem;
+    }
+}
+
+/* conteúdo principal */
+.conteudop-home{
+    background-color: rgb(255, 255, 255);
+    padding-top: 2.4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2.4rem;
+    mi-height: 270rem;
+    margin-top: 2rem;
+    margin-left: 0.55rem;
+    margin-right: 0.55rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* primeiro subtítulo da página home */
+.subtitulo-home {
+    color: rgba(8, 35, 93, 0.90);
+    text-align: center;
+    padding-top: 10rem;
+}
+
+/* primeiro subtítulo engajado */
+.p-paragrafo-engajado {
+    font-size: 0.85rem;
+    font-style: normal;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+/* segundo subtítulo engajado */
+.s-paragrafo-engajado {
+    color: rgb(171, 171, 171);
+    font-size: 0.60rem;
+    font-style: normal;
+    font-weight: lighter;
+    text-align: justify;
+    padding-bottom: 1rem;
+}
+
+/* Escudo */
+.escudo-protetor {
+    font-style: normal;
+}
+
+/* subtítulo de descrição */
+.subtitulo-descritivo{
+    color: white;
+    font-size: 0.75rem;
+    background-color: rgba(8, 35, 93, 1);
+    padding-top: 0.35rem;
+    padding-left: 0.80rem;
+    padding-bottom: 0.35rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.50rem;
+}
+
+/* artigos geral */
+.artigos {
+    background-color: rgb(255, 255, 255);
+    padding-top: 2.4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2.4rem;
+    margin-top: 2rem;
+    margin-left: 0.55rem;
+    margin-right: 0.55rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); 
+}
+
+/* figuras das imagens na secção produto */
+.figuras-produtos {
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0.50rem;
+    background-color: rgba(8, 35, 93, 0.95);
+}
+
+/* parágrafos descritivos */
+.paragrafo-descritivo {
+    text-align: justify;
+    font-size: 0.60rem;
+    line-height: 1.45rem;
+    padding-top: 0.55rem;
+}
+
+/* legenda das imagens na secção produto */
+.legendas-figuras-home {
+    color: white;
+    font-size: 0.60rem;
+    font-weight: lighter;
+    font-style: normal;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.20rem;
+}
+
+/* Imagem da figura */
+.imagem-da-figura {
+    width: 100%;
+    border-radius: 0.20rem;
+}
+
+/*primeiro parágrafo */
+.primeiro-paragrafo {
+    color: lightgrey;
+    font-family: Times New Roman;
+    font-size: 0.12rem;
+    font-style: normal;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* rodapé e seus elementos */
+.rodape {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 1rem;  
+    background-color: rgba(17, 24, 39, 1);
+}
+
+/* localização física */
+.lista-localização {
+    list-style-type: none;
+    color: white;
+    font-style: normal;
+    font-size: 0.65rem;
+    line-height: 1.45rem;
+    padding-left: 1.10rem;
+}
+
+/* secção contato */
+.telefone {
+    display: block;
+    color: royalblue;
+    font-size: 0.65rem;
+    font-style: normal;
+    line-height: 1.45rem;
+    padding-left: 1.10rem;
+}
+
+/* logos sociais */
+.socialmedia-logo {
+    width: 4rem;
+    height: 2.25rem;
+    padding-top: 0.40rem;
+    padding-right: 1.18rem;
+}
+
+/* secção e-mail */
+.e-mail {
+    display: block;
+    color: white;
+    font-size: 0.65rem;
+    line-height: 1.45rem;
+    padding-left: 1.10rem;
+    padding-bottom: 0.50rem;
+}
+
+/* subtítulos das secções do rodapé */
+.subtitulos-rodape {
+    color: white;
+    font-style: normal;
+    padding-top: 2.10rem;
+    padding-bottom: 0.50rem;
+}
+
+/* política de privacidade */
+.politica {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* política de privacidade */
+.politica-de-privacidade {
+    color: royalblue;
+    font-size: 0.65rem;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* direitos autorais */
+.direitos-autorais {
+    color: white;
+    font-size: 0.65rem;
+    text-align: center;
+    word-spacing: 0.1rem;
+}
+
+/* estilização do termo VESTRA Inc. no rodapé */
+.vestra-inc {
+    color: cornflowerblue;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Verdana, Geneva, sans-sarif;
+}
+
+/* PÁGINA EXPLORAR */
+/* body */
+.container-explorar{
+    min-height: 100rem;
+}
+
+/* conteúdo principal página explorar */
+.conteudop-explorar{
+    background-color: rgb(255, 255, 255);
+    padding-top: 2.4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2.4rem;
+    min-height: 70rem;
+    margin-top: 2rem;
+    margin-left: 0.55rem;
+    margin-right: 0.55rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* primeiro subtítulo página explorar */
+.subtitulo-explorar {
+    color: rgba(0, 35, 93, 0.90);
+    font-size: 1rem;
+    text-align: center;
+    padding-bottom: 0.3rem;
+}
+
+/* segundo subtítulo página explorar */
+.segundo-subtitulo-explorar {
+    color: rgba(8, 35, 93, 0.90);
+    font-size: 0.60rem;
+    text-align: center;
+}
+
+/* primeiro parágrafo da página explorar */
+.primeiro-paragrafo-explorar {
+   font-size: 0.55rem;
+    text-align: center;
+    padding-top: 0.65rem;
+}
+
+/* imagens das figuras explorar */
+.imagem-explorar {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.25rem;
+}
+
+/* legendas das imagens explorar */
+.legenda-explorar {
+    font-size: 0.65rem;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+/* secções explorar */
+.seccao-explorar-imoveis {
+    background-color: rgb(255, 255, 255);
+    padding-top: 2.4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2.4rem;
+    margin-top: 2rem;
+    margin-left: 0.55rem;
+    margin-right: 0.55rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2)
+}
+
+.seccao-explorar-eletrodomesticos {
+    background-color: rgb(255, 255, 255);
+    padding-top: 2.4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2.4rem;
+    margin-top: 2rem;
+    margin-left: 0.55rem;
+    margin-right: 0.55rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.seccao-explorar-ferramentas {
+    background-color: rgb(255, 255, 255);
+    padding-top: 2.4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2.4rem;
+    margin-top: 2rem;
+    margin-left: 0.55rem;
+    margin-right: 0.55rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.seccao-explorar-dispositivos-moveis {
+    background-color: rgb(255, 255, 255);
+    padding-top: 2.4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2.4rem;
+    margin-top: 2rem;
+    margin-left: 0.55rem;
+    margin-right: 0.55rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.seccao-explorar-roupas { 
+    background-color: rgb(255, 255, 255);
+    padding-top: 2.4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2.4rem;
+    margin-top: 2rem;
+    margin-left: 0.55rem;
+    margin-right: 0.55rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.seccao-explorar-outros {
+    background-color: rgb(255, 255, 255);
+    padding-top: 2.4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2.4rem;
+    margin-top: 2rem;
+    margin-left: 0.55rem;
+    margin-right: 0.55rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* links de redirecionamento */
+.link-redirecionamento {
+    display: block;
+    font-size: 0.75rem;
+    text-align: center;
+    padding-top: 0.95rem;
+}
+
+/* PÁGINA IMÓVEIS */
+/* container imóveis */
+.contaier-imoveis {
+    min-height: 1560rem;
+}
+
+/* conteúdo principal da página imóveis */
+.conteudop-imoveis {
+    background-color: rgb(255, 255, 255);
+    padding-top: 2.4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2.4rem;
+    margin-top: 2rem;
+    margin-left: 0.55rem;
+    margin-right: 0.55rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* detalhes dos produtos */
+.detalhes {
+    color: black;
+    font-size: 0.65rem;
+    padding-top: 0.65rem;
+    padding-left: 1rem;
+    padding-bottom: 0.65rem;
+    margin-bottom: 0.75rem;
+    margin-top: 0.90rem;
+    border-radius: 0.95rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* link para a próxima página */
+.next-page {
+    display: block;
+    font-size: 0.75rem;
+    margin-bottom: 0.95rem;
+    margin-left: 0.65rem;
+}
+
+/* link para a anterior página */
+.last-page {
+    display: block;
+    font-size: 0.75rem;
+    margin-bottom: 0.65rem;
+    margin-left: 0.65rem;
+}
+
+/* PÁGINA FAQs */
+.subtitulo-faqs {
+    text-align: center;
+    font-size: 1.10rem;
+}
+
+/* conteúdo principal   */
+.container-faqs {
+    min-height: 70rem;
+}
+
+/* conteúdo principal */
+.conteudop-faqs {
+    background-color: rgb(255, 255, 255);
+    padding-top: 2.4rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+    padding-bottom: 2.4rem;
+    height: 108rem;
+    margin-top: 2rem;
+    margin-left: 0.55rem;
+    margin-right: 0.55rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* artigo sobre */
+.faqs {
+    background-color: rgb(255, 255, 255);
+    padding-top: 2.4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2.4rem;
+    margin-top: 2rem;
+    margin-left: 0.55rem;
+    margin-right: 0.55rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* primeiro subtítulo */
+.subtitulo-faqs {
+    padding-bottom: 0.65rem;
+}
+
+/* imagem do ponto de interrogação na figura */
+.imagem-ponto-inter {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.25rem;
+}
+
+/* legenda da figura faqs */
+.legenda-faqs {
+    color: white;
+    font-size: 0.65rem;
+    text-align: center;
+    padding-top: 0.25rem;
+}
+
+/* figura da faqs */
+.figura-faqs {
+    background-color: rgba(0, 35, 93, 0.90);
+    margin-top: 0.85rem;
+    padding-top: 0.5rem;
+    padding-left: 0.50rem;
+    padding-bottom: 0.5rem;
+    padding-right: 0.50rem;
+    border-radius: 1.25rem;
+}
+
+/* subtítulos dos páragrafos das perguntas */
+.subtitulo-pergunta {
+    font-size: 0.65rem;
+    padding-top: 2rem;
+}
+
+/* parágrafos de explicação às perguntas */
+.paragrafo-explicativo {
+    text-align: justify;
+    font-size: 0.60rem;
+    line-height: 1.45rem;
+}
+
+/* PÁGINA SOBRE */
+/* body */
+.container-sobre {
+    min-height: 50rem;
+}
+
+/* figura da imagem.sobre */
+.figura-sobre {
+    background-color: rgba(0, 35, 93, 0.90);
+    padding: 0.30rem;
+    margin-top: 1rem;
+    border-radius: 0.65rem;
+}
+
+/* imagem sobre da página Sobre */
+.imagem-sobre {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.65rem;
+}
+
+/* legenda */
+.legenda-sobre {
+    color: white;
+    font-size: 0.65rem;
+    text-align: center;
+}
+
+/* conteúdo principal */
+.conteudop-sobre {
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 2.4rem;
+    padding-right: 0.85rem;
+    padding-left: 0.85rem;
+    min-height: 35rem;
+    margin-top: 1rem;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    margin-bottom: 2.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px  12px rgba(0, 0, 0, 0.2);
+}
+
+/* secção da figura da imagem sobre */
+.seccao-sobre {
+    background-color: rgb(255, 255, 255);
+    padding-top: 0.1rem;
+    padding-bottom: 2.4rem;
+    padding-right: 0.85rem;
+    padding-left: 0.85rem;
+    min-height: 18rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px  12px rgba(0, 0, 0, 0.2);
+}
+
+/* container dos textos */
+.container-textos {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+/* título sobre nós */
+.sobre-nos {
+    text-align: center;
+    font-size: 1.25rem;
+    padding-top: 1.35rem;
+    padding-bottom: 1.35rem;
+}
+
+/* subtítulos */
+.subtitulos-sobre {
+    font-size: 0.75rem;
+    padding-top: 2rem;
+}
+
+/* parágrafos */
+.paragrafos-sobre {
+    font-size: 0.65rem;
+    text-align: justify;
+    padding-top: 1rem;
+}
+
+/* frase de engajamento */
+.frase-engajada {
+    color: rgba(0, 35, 93, 0.90);
+    font-size: 0.65rem;
+    text-align: justify;
+    padding-top: 1rem;
+    font-style: italic;
+}
+
+/* PÁGINA CONTATO */
+/* body */
+.container-contato {
+    min-height: 12rem;
+}
+
+/* conteúdo principal contato*/
+.conteudop-contato {
+    background-color: rgb(255, 255, 255);
+    padding-top: 0.1rem;
+    padding-bottom: 2.4rem;
+    padding-right: 0.85rem;
+    padding-left: 0.85rem;
+    min-height: 18rem;
+    margin-top: 1.25rem;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    margin-bottom: 0.55rem;
+    border-radius: 0.60rem;
+    box-shadow: 0px 4px  12px rgba(0, 0, 0, 0.2);  
+}
+
+/* título da página contato */
+.titulo-contato {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+/* figura da imagem contato */
+.figura-contato {
+    background-color: rgba(0, 35, 93, 0.90);
+    padding: 0.30rem;
+    margin-top: 1rem;
+    border-radius: 0.65rem;
+}
+
+/* legenda da imagem contato */
+.legenda-contato {
+    color: white;
+    font-size: 0.65rem;
+    text-align: center;
+}
+
+/* imagem da figura contato */
+.imagem-contato {
+    width: 100%;
+    height: 100%;
+}
+
+/* parágrafo do contato */
+.paragrafo-contato {
+    font-size: 0.65rem;
+    text-align: justify;
+    line-height: 1rem;
+    padding-top: 2.25rem;
+}
